@@ -1,0 +1,59 @@
+<header>
+  <img id="book-logo" src="assets/img/Book.png" alt="Book logo" class="float-left mr-3">
+  <h2 class="title">{{title}}</h2>
+  <h6 class="sub-title">{{subtitle}}</h6>
+</header>
+
+<div class="m-3">
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <input [(ngModel)]="term" type="text" class="form-control" type="search" placeholder="SEARCH">
+    <div class="input-group-addon">
+      <img id="search" src="assets/img/Search-32.png" alt="Magnifying glass">
+    </div>
+  </div>
+</div>
+
+<div class="m-3">
+  <button id="featured" type="button" class="btn btn-primary btn-lg btn-block text-left">Featured</button>
+</div>
+
+<div *ngIf="books" class="album text-muted px-3">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let book of books | jsonToArray | search:term" class="col-md-4 col-sm-6 col-12 p-2">
+        <div class="card p-4">
+          <img src="{{book.info.cover.medium}}" alt="Book cover" class="cover mx-auto">
+          <div class="lh-m">
+            <span id="title" class="card-text">{{book.info.title}}</span>
+            <br>
+            <span class="card-text">By</span>
+            <!-- This approach works, but would leave the author blank -->
+            <!-- <span *ngIf="book.info.authors; else authorMissing" class="card-text author">{{book.info.authors[0]?.name}}</span> -->
+            <span *ngIf="book.info.authors; else authorMissing" class="card-text author">{{book.info.authors[0].name}}</span>
+            <ng-template #authorMissing>
+              <span class="card-text author-missing">[Author missing!]</span>
+            </ng-template>
+            <br>
+            <span class="card-text">{{book.info.key.slice(7)}}</span>
+          </div>
+          <br>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div>
+            <h5 id="price" class="float-left">$24.99</h5>
+            <button id="add-to-cart" type="button" class="btn btn-sm float-right p-2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Not opted for the full jquery, since not using the ajax and effects modules -->
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+  crossorigin="anonymous"></script>

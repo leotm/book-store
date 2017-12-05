@@ -1,0 +1,123 @@
+/* Default */
+
+body {
+  margin: 0;
+}
+
+header {
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  font-family: sans-serif;
+  font-size: 42px;
+}
+
+/* Custom */
+
+body {
+  letter-spacing: -0.5px;
+  background: #f7f7f7;
+}
+
+header {
+  background: linear-gradient(white, #e5e5e5);
+}
+
+header .title {
+  /* Used classes, since #title is reserved from Bootstrap */
+  text-transform: uppercase;
+  font-family: sans-serif;
+  /* cursive */
+}
+
+header .sub-title {
+  line-height: 0px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #b8b8b8;
+}
+
+button#featured {
+  background: #d44535;
+  border: 1px solid #a85b55;
+  pointer-events: none;
+  text-transform: uppercase;
+  font-size: small;
+}
+
+input.form-control {
+  border: 5px solid #CBCBCD;
+  border-radius: 10px;
+}
+
+input.form-control::placeholder {
+  font-size: 0.7em;
+}
+
+div.input-group-addon {
+  background: #d44535;
+  padding: 0 0.6rem;
+}
+
+.lh-m {
+  line-height: 16px;
+}
+
+#title {
+  color: #a64c4b;
+  font-weight: bold;
+}
+
+.author {
+  color: #a64c4b;
+}
+
+.author-missing {
+  color: #d44535;
+}
+
+#price {
+  color: black;
+  line-height: 27px;
+  /* Center, without extending height */
+}
+
+button#add-to-cart {
+  background: linear-gradient(#3a3a3a, #1b1b1b);
+  color: white;
+}
+
+.card-text {
+  font-size: 75%;
+}
+
+img.cover {
+  margin-bottom: 0.75rem;
+  height: 134px;
+  width: 89px;
+}
+
+.card {
+  background: #f7f7f7;
+}
+
+.card {
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+  background: white;
+}
+
+img#search {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 0px;
+}
+
+img#book-logo {
+  height: 48px;
+  width: 48px;
+}
